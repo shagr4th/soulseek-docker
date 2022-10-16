@@ -1,9 +1,9 @@
-FROM ubuntu:focal-20220316
+FROM ubuntu:jammy-20221003
 
 ARG SOULSEEK_VERSION=2018-1-30
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
- apt-get install -y binutils ca-certificates curl openbox supervisor tigervnc-common tigervnc-standalone-server fonts-noto-cjk --no-install-recommends && \
+ apt-get install -y binutils ca-certificates curl openbox supervisor tigervnc-common tigervnc-tools tigervnc-standalone-server fonts-noto-cjk --no-install-recommends && \
  mkdir /usr/share/novnc && \
  curl -fL# https://github.com/novnc/noVNC/archive/master.tar.gz -o /tmp/novnc.tar.gz && \
  tar -xf /tmp/novnc.tar.gz --strip-components=1 -C /usr/share/novnc && \
